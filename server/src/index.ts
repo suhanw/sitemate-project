@@ -1,8 +1,12 @@
 import path from "path";
 import express from "express";
+import bodyParser from "body-parser";
+import issuesApi from "./api/issues";
 
 const PORT = 3000;
 const app = express();
+
+app.use(bodyParser.json());
 
 app.use("/public", express.static(path.join(process.cwd(), "./dist/client")));
 
@@ -20,6 +24,8 @@ app.get("/", (req, res) => {
     </html>
   `);
 });
+
+app.use("/api", issuesApi());
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

@@ -1,0 +1,24 @@
+GET http://localhost:3000/api/issues HTTP/1.1
+
+###
+
+POST http://localhost:3000/api/issues HTTP/1.1
+content-type: application/json
+
+{
+    "title": "newTitle", 
+    "description": "This is new issue"
+}
+
+###
+
+DELETE http://localhost:3000/api/issues/1 HTTP/1.1
+
+###
+
+PUT http://localhost:3000/api/issues/1 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "changedTitle"
+}
