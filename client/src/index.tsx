@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { useGetIssuesReducer } from "./api/get-issues";
+import { deleteIssue } from "./api/delete-issue"
 
 function App() {
   const { loading, error, issues } = useGetIssuesReducer();
@@ -17,6 +18,7 @@ function App() {
               <li key={issue.id}>
                 <h2>{issue.title}</h2>
                 <p>{issue.description}</p>
+                <button onClick={() => deleteIssue(issue.id)}>Delete</button>
               </li>
             );
           })}
