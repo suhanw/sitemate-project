@@ -16,6 +16,7 @@
   "author": "suhanw@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.7",
     "body-parser": "^1.20.3",
     "express": "4.19.2"
   },
