@@ -9,13 +9,14 @@
     "build": "concurrently --raw \"npm:build:client\" \"npm:build:server\"",
     "start": "node dist/server/index.js",
     "dev": "nodemon --exec \"npm run build && npm run start\" -e ts,tsx",
-    "typecheck:client": "tsc --noEmit --project client/tsconfig.json", 
+    "typecheck:client": "tsc --noEmit --project client/tsconfig.json",
     "typecheck:server": "tsc --noEmit --project server/tsconfig.json",
     "typecheck": "concurrently --raw \"npm:typecheck:client\" \"npm:typecheck:server\""
   },
   "author": "suhanw@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "express": "4.19.2"
   },
   "devDependencies": {
